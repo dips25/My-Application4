@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">MyAppication4</string>
+    <string name="error_uploading">Error Uploading</string>
+    <string name="uploading_post">Uploading Post</string>
+    <string name="upload_post_dialogue">Post will upload within a while...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="unable_to_fetch_posts">Unable to fetch posts</string>
+    <string name="describe_your_post">Describe your post...</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_date_of_birth">Enter Date Of Birth</string>
+    <string name="enter_bio">Enter Bio.....</string>
+    <string name="save">Save</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="set">Set</string>
+    <string name="error">Error</string>
+    <string name="next">Next</string>
+    <string name="post">Post</string>
+    <string name="follow">Follow</string>
+    <string name="searchhere">Search</string>
+</resources>

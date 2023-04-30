@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myappication4">
+
+
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+
+    <application
+        android:name=".MyAppication4"
+        android:allowBackup="true"
+        android:largeHeap="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+
+        android:theme="@style/Theme.MyAppication4">
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:exported="true"
+            android:label="@string/title_activity_register"
+            android:theme="@style/Theme.MyAppication4.NoActionBar" />
+        <activity
+            android:name=".PostActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MyAppication4.NoActionBar" />
+        <activity android:name=".activities.LoginActivity"
+            android:exported="false"
+           />
+
+        <activity android:name=".activities.SampleActvity"
+            android:exported="true"
+            android:theme="@style/Theme.MyAppication4.NoActionBar">
+
+
+
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MyAppication4.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+       <activity android:name=".activities.PostPreviewActivity"
+           android:theme="@style/Theme.MyAppication4.NoActionBar"
+           android:exported="true"/>
+
+        <service android:name=".services.PostService" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.myappication4.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

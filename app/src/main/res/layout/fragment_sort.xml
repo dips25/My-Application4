@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SearchFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height ="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width = "match_parent"
+            android:layout_height = "50dp"
+            android:background="@drawable/text_background"
+            android:padding="5dp"
+            android:hint="@string/searchhere"
+            android:layout_margin="5dp"
+            android:id="@+id/search_editText">
+
+        </EditText>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/search_list">
+
+        </ListView>
+
+    </LinearLayout>
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+</FrameLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/drawable/dots_selected.xml" value="0.169" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/drawable/dots_unselected.xml" value="0.169" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/drawable/edit.xml" value="0.169" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/drawable/follow_button_background.xml" value="0.169" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/drawable/progressbar.xml" value="0.169" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/drawable/text_background.xml" value="0.169" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/drawable/transparent_circle.xml" value="0.169" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/drawable/unfollow_button_background.xml" value="0.169" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/activity_main.xml" value="0.536" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/activity_multiviewpager.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/activity_post.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/activity_post_preview.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/blank_fragment.xml" value="1.2516447368421053" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/bottomsheet.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/content_main.xml" value="0.11302083333333333" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/content_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_datepicker.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_image2.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_myimages.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_myvideos.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_post_preview_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_posts.xml" value="0.24010416666666667" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_profile_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_profile_video.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_second.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_sort.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_video.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_video2.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/fragment_viewpager.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/multi_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/post_image.xml" value="0.152" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/post_video.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/sample_activity.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/single_item_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/single_item_post.xml" value="0.11302083333333333" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/single_item_profile_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/single_item_profile_video.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/single_item_video.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/single_post_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/single_post_video.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/layout/sinle_item_profile_image.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/MyAppication4/app/src/main/res/menu/menu_main.xml" value="0.11302083333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
