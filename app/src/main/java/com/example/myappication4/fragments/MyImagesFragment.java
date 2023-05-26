@@ -1,6 +1,7 @@
 package com.example.myappication4.fragments;
 
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -12,10 +13,13 @@ import android.widget.GridView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myappication4.Models.DirImages;
 import com.example.myappication4.R;
 import com.example.myappication4.adapters.GridAdapter;
+import com.example.myappication4.adapters.GridRecyclerAdapter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -24,8 +28,8 @@ public class MyImagesFragment extends Fragment {
 
     private static final String TAG = MyImagesFragment.class.getSimpleName();
 
-    GridView gridView;
-    GridAdapter gridAdapter;
+    RecyclerView gridView;
+    GridRecyclerAdapter gridAdapter;
     ArrayList<DirImages> dirImages = new ArrayList<>();
 
     @Override
@@ -39,8 +43,10 @@ public class MyImagesFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_myimages , container , false);
 
-        gridView = (GridView) view.findViewById(R.id.post_grid);
-        gridAdapter = new GridAdapter(getActivity() , dirImages);
+        gridView = (RecyclerView) view.findViewById(R.id.post_grid);
+        gridAdapter = new GridRecyclerAdapter(getActivity() , dirImages);
+        gridView.setLayoutManager(new GridLayoutManager(getActivity() , 3));
+        gridView.setHasFixedSize(true);
         gridView.setAdapter(gridAdapter);
 
         getAllImages();
@@ -64,7 +70,9 @@ public class MyImagesFragment extends Fragment {
 
         Log.d(TAG, "getAllImages: " + file.getAbsolutePath());
 
-        getFiles(files);
+        new GetImages().execute(files);
+
+        //getFiles(files);
 
 
     }
@@ -91,10 +99,43 @@ public class MyImagesFragment extends Fragment {
 
         }
 
-
-
-        gridAdapter.notifyDataSetChanged();
-
+        //gridAdapter.notifyDataSetChanged();
 
     }
+
+    class GetImages extends AsyncTask<File[], Integer , String>{
+
+
+        @Override
+        protected String doInBackground(File[]... strings) {
+
+            File[] files = strings[0];
+
+            for (int i = 0; i < files.length; i++) {
+
+                File[] newfile = files[i].listFiles();
+
+                for (int j = 0; j < newfile.length; j++) {
+
+                    if (newfile[j].isFile()) {
+
+                        if (newfile[j].getPath().endsWith(".jpg") || newfile[j].getPath().endsWith(".jpeg") || newfile[j].getPath().endsWith(".png"))
+
+                            dirImages.add(new DirImages(Uri.parse(newfile[j].getAbsolutePath()).toString()));
+
+
+                    }
+                }
+
+            }
+            return "done";
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            gridAdapter.notifyDataSetChanged();
+        }
+    }
+
+
 }

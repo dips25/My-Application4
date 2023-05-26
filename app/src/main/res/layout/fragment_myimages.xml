@@ -3,14 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <GridView
+<!--    <GridView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@id/image_vid_holder"-->
+<!--        android:numColumns="3"-->
+<!--        android:verticalSpacing="1dp"-->
+<!--        android:horizontalSpacing="1dp"-->
+<!--        android:stretchMode="columnWidth"-->
+<!--        android:id="@+id/post_grid"/>-->
+
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/image_vid_holder"
-        android:numColumns="3"
-        android:verticalSpacing="1dp"
-        android:horizontalSpacing="1dp"
-        android:stretchMode="columnWidth"
-        android:id="@+id/post_grid"/>
+        android:id="@+id/post_grid">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>

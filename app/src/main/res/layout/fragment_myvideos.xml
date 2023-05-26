@@ -3,13 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <GridView
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="3"
-        android:verticalSpacing="2dp"
-        android:horizontalSpacing="2dp"
-        android:stretchMode="columnWidth"
         android:id="@+id/post_grid"/>
 
 </FrameLayout>

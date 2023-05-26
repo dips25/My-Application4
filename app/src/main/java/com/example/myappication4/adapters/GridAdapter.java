@@ -36,11 +36,13 @@ public class GridAdapter extends BaseAdapter {
     ImageVideo imageVideo;
     volatile boolean isMultiSelectionEnabled = true;
 
+
     public GridAdapter(Context context , ArrayList<DirImages> dirImages) {
 
         this.context = context;
         this.dirImages = dirImages;
         this.imageVideo = (ImageVideo) context;
+        this.inflater = LayoutInflater.from(context);
     }
     @Override
     public int getCount() {
@@ -60,7 +62,7 @@ public class GridAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 
         final DirImages dirImages = this.dirImages.get(position);
@@ -72,6 +74,7 @@ public class GridAdapter extends BaseAdapter {
                 Bitmap bitmap = decodeFile(new File(dirImages.getName()));
 
                 ImageView single_post_image = (ImageView) convertView.findViewById(R.id.single_post_image);
+                single_post_image.setImageDrawable(null);
                 CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.single_item_check);
 
                 //Glide.with(context).load(dirImages.getName()).into(single_post_image);
@@ -115,14 +118,11 @@ public class GridAdapter extends BaseAdapter {
 
             }    else {
 
-                convertView = LayoutInflater.from(context).inflate(R.layout.single_item_video , parent , false);
+                convertView = inflater.inflate(R.layout.single_item_video , parent , false);
 
                 VideoView videoView = (VideoView) convertView.findViewById(R.id.single_post_video);
 
                 videoView.setVideoURI(Uri.parse(dirImages.getName()));
-
-
-
 
 
                 videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
@@ -173,24 +173,7 @@ public class GridAdapter extends BaseAdapter {
 
         }
 
-//            convertView.setOnLongClickListener(new View.OnLongClickListener() {
-//                @Override
-//                public boolean onLongClick(View v) {
-//
-//
-//                    if (isMultiSelectionEnabled) {
-//
-//                        isMultiSelectionEnabled = false;
-//
-//                    } else {
-//
-//                        isMultiSelectionEnabled = true;
-//                    }
-//
-//                    return false;
-//
-//                }
-//            });
+
 
         return convertView;
     }

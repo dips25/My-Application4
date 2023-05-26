@@ -12,10 +12,13 @@ import android.widget.GridView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myappication4.Models.DirImages;
 import com.example.myappication4.R;
 import com.example.myappication4.adapters.GridAdapter;
+import com.example.myappication4.adapters.GridRecyclerAdapter;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -24,8 +27,8 @@ public class MyVideoFragment extends Fragment {
 
     private static final String TAG = MyVideoFragment.class.getSimpleName();
 
-    GridView gridView;
-    GridAdapter gridAdapter;
+    RecyclerView gridView;
+    GridRecyclerAdapter gridAdapter;
     ArrayList<DirImages> dirImages = new ArrayList<>();
 
     @Override
@@ -40,11 +43,15 @@ public class MyVideoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_myvideos , container , false);
 
 
-        gridView = (GridView) view.findViewById(R.id.post_grid);
-        gridAdapter = new GridAdapter(getActivity() , dirImages);
+        gridView = (RecyclerView) view.findViewById(R.id.post_grid);
+        gridAdapter = new GridRecyclerAdapter(getActivity() , dirImages);
+        gridView.setLayoutManager(new GridLayoutManager(getActivity() , 3));
+        gridView.setHasFixedSize(true);
         gridView.setAdapter(gridAdapter);
 
         getAllImages();
+
+
         return view;
     }
 

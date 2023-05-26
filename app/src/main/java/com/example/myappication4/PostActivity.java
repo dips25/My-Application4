@@ -65,6 +65,9 @@ public class PostActivity extends AppCompatActivity implements ImageVideo {
     TabLayout tabLayout;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
+    public static int count=0;
+    public static final int MAX_COUNT=6;
+
 
 
 
@@ -79,6 +82,7 @@ public class PostActivity extends AppCompatActivity implements ImageVideo {
         camera = (ImageView) findViewById(R.id.camera);
         cancel = (ImageView) findViewById(R.id.cancel);
         post = (TextView) findViewById(R.id.post);
+        post.setText("Next(0)");
 
         post_image = (ImageView) findViewById(R.id.post_image);
         post_video = (VideoView) findViewById(R.id.post_video);
@@ -242,14 +246,16 @@ public class PostActivity extends AppCompatActivity implements ImageVideo {
     public void getImage(String image) {
 
         stringArrayList.add(image);
-        Log.d(TAG, "getImage: " + stringArrayList.toString());
-
+        post.setText("Next(" + count +")");
     }
 
     @Override
     public void getVideo(String video) {
 
-        stringArrayList.add(video);
+            stringArrayList.add(video);
+            post.setText("Next("+count+")");
+
+
 
     }
 
@@ -259,6 +265,7 @@ public class PostActivity extends AppCompatActivity implements ImageVideo {
         if (stringArrayList.contains(image)) {
 
             stringArrayList.remove(image);
+            post.setText("Next("+count+")");
         }
 
     }
@@ -269,47 +276,10 @@ public class PostActivity extends AppCompatActivity implements ImageVideo {
         if (stringArrayList.contains(video)) {
 
             stringArrayList.remove(video);
+            post.setText("Next("+count+")");
         }
 
     }
 
-//    class GetImages extends AsyncTask<File , String , String> {
-//
-//
-//        @Override
-//        protected String doInBackground(File... strings) {
-//
-//            File[] files = strings[0].listFiles();
-//
-//            for (int i = 0; i < files.length; i++) {
-//
-//                if (files[i].isDirectory()) {
-//
-//                    getSubDirectory(files[i]);
-//
-//                } else if (files[i].isFile()) {
-//
-//                    if (files[i].getPath().endsWith("jpg") || files[i].getPath().endsWith("jpeg"))
-//
-//                        dirImages.add(new DirImages(Uri.parse(files[i].getAbsolutePath()).toString()));
-//
-//
-//                    Log.d(TAG, "getSubDirectoryi: " + dirImages.toString());
-//
-//
-//
-//                }
-//            }
-//
-//            return null;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(String s) {
-//            super.onPostExecute(s);
-//
-//            gridAdapter.notifyDataSetChanged();
-//
-//        }
-//    }
+
 }
