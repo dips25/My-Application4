@@ -1,6 +1,9 @@
 package com.example.myappication4.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.TransitionDrawable;
 import android.media.Image;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -8,6 +11,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -15,6 +20,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +28,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
+import com.example.myappication4.MainActivity;
 import com.example.myappication4.Models.Content;
 import com.example.myappication4.Models.PostImages;
 import com.example.myappication4.OnScrollListener;
@@ -44,6 +51,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
     private static final String TAG = PostsAdapter.class.getSimpleName();
     public ViewHolder viewHolder;
     PostsFragment postsFragment;
+    Animation animation;
 
 
 
@@ -55,6 +63,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
 
         this.context = context;
         this.postImagesArrayList = postsArrayList;
+        this.animation = AnimationUtils.loadAnimation(context , R.anim.bounce);
         //this.fragmentManager = fragmentManager;
         //this.postsFragment = postsFragment;
 
@@ -150,6 +159,25 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
 
         }
 
+        holder.like.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isSelected = ((ImageView)v).isSelected();
+
+                if (!isSelected) {
+
+                    ((ImageView) v).setSelected(true);
+                    changeColor(((MainActivity) context).mainroot);
+                    ((ImageView) v).startAnimation(animation);
+
+                } else {
+
+                    ((ImageView) v).setSelected(false);
+                }
+
+            }
+        });
+
 
 
 
@@ -204,6 +232,16 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         return postImagesArrayList.size();
     }
 
+    private void changeColor(CoordinatorLayout layout) {
+        ColorDrawable[] colorDrawables = new ColorDrawable[]{new ColorDrawable(Color.rgb(  252,184 , 226)),new ColorDrawable(Color.WHITE),};
+
+        TransitionDrawable transitionDrawable = new TransitionDrawable(colorDrawables);
+
+        layout.setBackground(transitionDrawable);
+        transitionDrawable.startTransition(1000);
+        //layout.setBackground(getResources().getDrawable(R.color.white));
+    }
+
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -218,6 +256,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
         LinearLayout linearLayout;
         ImageView[] imgs;
         FrameLayout postFrame;
+        ImageView like;
 
 
 
@@ -232,6 +271,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder>{
             profileImage = (CircleImageView) view.findViewById(R.id.profile_image);
             postImageViewPager = (ViewPager) view.findViewById(R.id.post_viewpager);
             linearLayout = (LinearLayout) view.findViewById(R.id.dots);
+            like = (ImageView) view.findViewById(R.id.like);
 
 
         }

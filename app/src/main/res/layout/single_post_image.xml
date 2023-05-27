@@ -142,21 +142,27 @@
         android:gravity="center"
         android:id="@+id/dots"/>
 
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/post_viewpager"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/like_selected"
+        android:enabled="false"
+        android:adjustViewBounds="false"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:id="@+id/like"/>
+
 
     <FrameLayout
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_below="@id/post_viewpager"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp">
+       >
 
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/heart"
-        android:id="@+id/like"/>
+
     </FrameLayout>
 
 </RelativeLayout>

@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.myappication4.activities.LoginActivity;
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     public AppBarLayout ab;
     public ImageView profileImageBackground;
     CollapsingToolbarLayout collapsingToolbarLayout;
+    public CoordinatorLayout mainroot;
+
 
 
 
@@ -54,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mainroot = (CoordinatorLayout) findViewById(R.id.mainroot);
 
         ab = (AppBarLayout) findViewById(R.id.action_bar);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
